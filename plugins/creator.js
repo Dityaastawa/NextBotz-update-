@@ -5,9 +5,9 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
   let _type = (args[0] || '').toLowerCase()
 
 //------- NOMOR
-  let nowner = `https://wa.me/${nomorown.split`@`[0]}`
+  let nowner = `${nomorown.split`@`[0]}@s.whatsapp.net`
   let teksnomor = `${htki} *OWNER* ${htka}
-✦ https://wa.me/${nomorown.split`@`[0]} ✦
+✦ @${nomorown.split`@`[0]} ✦
 ------- ${nameown} -------
 
 📮 *Note:*
@@ -20,19 +20,20 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
 //------------ BIO
 let ppown = await conn.profilePictureUrl(nomorown + '@s.whatsapp.net', 'image').catch(_ => hwaifu[1]) 
 let teksbio = `${htki} *BIODATA* ${htka}
-${htjava} *💌 Nama* : PutraModz 
-${htjava} *✉️ Nama RL* : PUTRA
+${htjava} *💌 Nama* : DityaAstawa
+${htjava} *✉️ Nama RL* : Ditya Store
 ${htjava} *♂️ Gender* : Boys
-${htjava} *🕋 Agama* : Islam
+${htjava} *🕉 Agama* : Hindu
 ${htjava} *⏰ Tanggal lahir* : Private 🥶
-${htjava} *🎨 Umur* : PRIVATE
-${htjava} *🧮 Kelas* : PRIVATE
-${htjava} *🧩 Hobby* : MODIFIKASI WHATSAPP
-${htjava} *💬 Sifat* : ASIK DAH KALAU DAH KENAL
-${htjava} *🗺️ Tinggal* : Jawa Barat, Kuningan 
-${htjava} *❤️ Waifu* : Amelia Putri septiany
+${htjava} *🎨 Umur* : 17
+${htjava} *🧮 Kelas* : 11 SMA
+${htjava} *🧩 Hobby* : MAIN GAME,NGEBOT,REBAHAN
+${htjava} *💬 Sifat* : INTROVERT DAN PEMALU
+${htjava} *🗺️ Tinggal* : Indo, Jembrana, Bali
+${htjava} *❤️ Waifu* : -
 
 ${htjava} *📷 ɪɴsᴛᴀɢʀᴀᴍ* : ${sig}
+${htjava} *🐈 ɢɪᴛʜᴜʙ:* ${sgh}
 •·––––––––––––––––––––––––––·•
 `
   let teks = 'Pilih dibawah kak ! o(〃＾▽＾〃)o'
@@ -40,8 +41,10 @@ const sections = [
    {
 	title: `${htjava} OWNER –––––––––·•`,
 	rows: [
-	    {title: "📱 • Nomor", rowId: ".owner nomor"},
+	{title: "📱 • Nomor Owner", rowId: ".owner nomor"},
+	{title: "📱 • Pengembang", rowId: ".creator"},
 	{title: "🎨 • Biodata", rowId: ".owner bio"},
+	{title: "🌎 • Script", rowId: ".sc"},
 	]
     },{
 	title: `${htjava} SUPPORT ME –––––––·•`,
@@ -97,8 +100,8 @@ const listMessage = {
   }
 }
 
-handler.help = ['owner', 'creaor']
+handler.help = ['owner','creator']
 handler.tags = ['main', 'info']
-handler.command = /^(owner|creator)/i
+handler.command = /^(owner)/i
 
 export default handler
